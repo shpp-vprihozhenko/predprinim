@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 import 'globals.dart';
+import 'scan_bar_code.dart';
 import 't2.dart';
 import 'yt.dart';
 
@@ -219,6 +220,18 @@ class Service extends StatelessWidget {
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder:
                       (context) => const Test2()),
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: OutlinedButton(
+                style: bStyle,
+                child: const Text('Сканер ШК'),
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder:
+                      (context) => const ScanBarCode()),
                   );
                 },
               ),

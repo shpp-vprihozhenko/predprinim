@@ -287,6 +287,12 @@ ButtonStyle bStyle = OutlinedButton.styleFrom(
   shadowColor: Colors.red,
   elevation: 10,
 );
+ButtonStyle iStyle = OutlinedButton.styleFrom(
+  //primary: Colors.white,
+  //backgroundColor: Colors.white,
+  shadowColor: Colors.black,
+  elevation: 10,
+);
 
 updateJ(Doc doc) {
   for (int idx=0; idx<journal.length; idx++) {

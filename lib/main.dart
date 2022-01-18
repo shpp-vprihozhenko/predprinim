@@ -123,105 +123,112 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: const Text('Предприниматель'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Закупка товара'),
-                onPressed: (){
-                  Doc doc = Doc(date: DateTime.now(),
-                    numDoc: (docNumerator+1).toString(), typeDoc: 'z'
-                  );
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => Purchase(doc: doc)),
-                  );
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Продажа товара'),
-                onPressed: (){
-                  Doc doc = Doc(date: DateTime.now(),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/olegBG.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Приходы товара'),
+                  onPressed: (){
+                    Doc doc = Doc(date: DateTime.now(),
                       numDoc: (docNumerator+1).toString(), typeDoc: 'z'
-                  );
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => Sell(doc: doc)),
-                  );
-                },
+                    );
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => Purchase(doc: doc)),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Внесение денег'),
-                onPressed: (){
-                  Doc doc = Doc(date: DateTime.now(), numDoc: (docNumerator+1).toString(),
-                      typeDoc: 'a', sum: 0, ka: '', inf: '', td: ''
-                  );
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => AddMoney(doc: doc,)),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Продажа товара'),
+                  onPressed: (){
+                    Doc doc = Doc(date: DateTime.now(),
+                        numDoc: (docNumerator+1).toString(), typeDoc: 'z'
+                    );
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => Sell(doc: doc)),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Изьятие денег'),
-                onPressed: (){
-                  Doc doc = Doc(date: DateTime.now(), numDoc: (docNumerator+1).toString(),
-                      typeDoc: 'b', sum: 0, ka: '', inf: '', td: ''
-                  );
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => AddMoney(doc: doc,)),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Внесение денег'),
+                  onPressed: (){
+                    Doc doc = Doc(date: DateTime.now(), numDoc: (docNumerator+1).toString(),
+                        typeDoc: 'a', sum: 0, ka: '', inf: '', td: ''
+                    );
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => AddMoney(doc: doc,)),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Журнал'),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => const Journal()),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Изьятие денег'),
+                  onPressed: (){
+                    Doc doc = Doc(date: DateTime.now(), numDoc: (docNumerator+1).toString(),
+                        typeDoc: 'b', sum: 0, ka: '', inf: '', td: ''
+                    );
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => AddMoney(doc: doc,)),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Отчёты'),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => const Reports()),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Журнал'),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => const Journal()),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Сервис'),
-                onPressed: _serv,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Отчёты'),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => const Reports()),
+                    );
+                  },
+                ),
               ),
-            ),
-            const SizedBox(height: 20,),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Сервис'),
+                  onPressed: _serv,
+                ),
+              ),
+              const SizedBox(height: 20,),
+            ],
+          ),
         ),
       ),
     );  }
@@ -235,59 +242,67 @@ class Reports extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Отчёты'),),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Движение денег'),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => const RepMoney()),
-                  );
-                },
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/olegBG.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Движение денег'),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => const RepMoney()),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Движение товара'),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => const RepThings()),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Движение товара'),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => const RepThings()),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Прибыль'),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => const RepProfit()),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Прибыль'),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => const RepProfit()),
+                    );
+                  },
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: OutlinedButton(
-                style: bStyle,
-                child: const Text('Баланс'),
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder:
-                      (context) => const RepBalance()),
-                  );
-                },
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: OutlinedButton(
+                  style: bStyle,
+                  child: const Text('Баланс'),
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder:
+                        (context) => const RepBalance()),
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
